@@ -1,0 +1,15 @@
+---
+layout: default
+title: Categories
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Authors</h1>
+  <ul class="authors-list">
+    {% for cat in site.data.categories %}
+      <li>{{ cat.pretty }}</li>
+    {% endfor %}
+  </ul>
+
+</div>

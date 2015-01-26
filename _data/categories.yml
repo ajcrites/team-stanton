@@ -1,0 +1,11 @@
+- name: ios
+  pretty: iOS
+  keywords: [ios, apple, uikit, watchkit]
+
+- name: android
+  pretty: Android
+  keywords: [android, google, holo, material]
+
+- name: web
+  pretty: Web
+  keywords: [web, html, html5, css, js, javascript]

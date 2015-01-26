@@ -1,11 +1,18 @@
 ---
 layout: default
 ---
+{% if page.author %}
+  {% for author in site.data.authors %}
+    {% if author.name == page.author %}
+        {% assign currentauthor = author %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 <div class="post">
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ currentauthor.display_name }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
   </header>
 
   <article class="post-content">

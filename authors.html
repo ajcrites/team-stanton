@@ -1,0 +1,15 @@
+---
+layout: default
+title: Authors
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Authors</h1>
+  <ul class="authors-list">
+    {% for author in site.data.authors %}
+      <li>{{ author.name }}</li>
+    {% endfor %}
+  </ul>
+
+</div>
