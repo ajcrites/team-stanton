@@ -9,3 +9,7 @@
 - name: web
   pretty: Web
   keywords: [web, html, html5, css, js, javascript]
+
+- name: fire
+  pretty: Fire
+  keywords: [fire, profire, fireman, firetruck, component, workflow]

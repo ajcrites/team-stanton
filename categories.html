@@ -6,9 +6,16 @@ title: Categories
 <div class="home">
 
   <h1 class="page-heading">Authors</h1>
-  <ul class="authors-list">
+  <ul class="categories-list">
     {% for cat in site.data.categories %}
       <li>{{ cat.pretty }}</li>
+      <ul>
+        {% for post in site.posts %}
+          {% if post.category == cat.name %}
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </ul>
     {% endfor %}
   </ul>
 
