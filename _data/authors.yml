@@ -1,13 +1,44 @@
 - name: firoze
   display_name: Firoze Rakib
   email: frakib@mobiquityinc.com
-  gravatar: 3acc41aa2acce24ca4c68dda7da39a17
-  twitter: frzrkb
   github: firoze
-  
+
 - name: gotoplanb
   display_name: Dave Stanton
   email: dstanton@mobiquityinc.com
-  gravatar: 4f4b166f9bb39f3432f19d09768f6445
-  twitter: gotoplanb
   github: gotoplanb
+
+- name: lbj417
+  display_name: Laura Jackson
+  email: ljackson@mobiquityinc.com
+  github: lbj417
+
+- name: ashajgotra
+  display_name: Ashutosh Shajgotra
+  email: ashajgotra@mobiquityinc.com
+  github: ashajgotra
+
+- name: danish7
+  display_name: Danish Arshad
+  email: darshad@mobiquityinc.com
+  github: danish7
+
+- name: logananderson
+  display_name: Logan Anderson
+  email: landerson@mobiquityinc.com
+  github: logananderson
+
+- name: c-lemire
+  display_name: Logan Anderson
+  email: clemire@mobiquityinc.com
+  github: c-lemire
+
+- name: tkayali
+  display_name: Tarif Kayali
+  email: tkayali@mobiquityinc.com
+  github: tkayali
+  
+- name: tikipatel
+  display_name: Pratik Patel
+  email: ppatel@mobiquityinc.com
+  github: tikipatel

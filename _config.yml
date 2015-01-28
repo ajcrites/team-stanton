@@ -6,7 +6,6 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "/teamstanton" # the subpath of your site, e.g. /blog/
 url: "http://mobiquity.github.io" # the base hostname & protocol for your site
 
-twitter_username: gotoplanb
 github_username:  gotoplanb
 
 highlighter: pygments
