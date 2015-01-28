@@ -10,7 +10,7 @@ title: Authors
   <div class="authors-container">
     {% for author in site.data.authors %}
       <div class="author-card">
-        <img class="author-image" src="https://s.gravatar.com/avatar/{{author.gravatar}}?s=300"/>
+        <a href="https://github.com/{{ author.github }}"><img class="author-image" src="https://avatars.githubusercontent.com/{{ author.github }}?s=300" alt="{{ author.github }}"/></a>
         <div class="author-title">{{ author.display_name }}</div>
         <div class="author-email">{{ author.email }}</div>
         {% for post in site.posts %}
