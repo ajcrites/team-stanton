@@ -2,11 +2,13 @@
   display_name: Firoze Rakib
   email: frakib@mobiquityinc.com
   github: firoze
+  twitter: frzrkb
 
 - name: gotoplanb
   display_name: Dave Stanton
   email: dstanton@mobiquityinc.com
   github: gotoplanb
+  twitter: gotoplanb
 
 - name: lbj417
   display_name: Laura Jackson
@@ -27,6 +29,8 @@
   display_name: Logan Anderson
   email: landerson@mobiquityinc.com
   github: logananderson
+  twitter: poggus
+  website: http://loganonthemove.com/
 
 - name: c-lemire
   display_name: Chris Lemire
@@ -37,7 +41,7 @@
   display_name: Tarif Kayali
   email: tkayali@mobiquityinc.com
   github: tkayali
-  
+
 - name: tikipatel
   display_name: Pratik Patel
   email: ppatel@mobiquityinc.com
