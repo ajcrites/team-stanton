@@ -1,31 +1,60 @@
 div.authors-container {
 
-	& div.author-card {
+	& ::-webkit-scrollbar {
+			display: none;
+	}
+
+	div.author-card {
+
+		.front {
+			display: block;
+		}
+
+		.back {
+			display: none;
+		}
+
+		/* &:hover {
+			.front {
+				display: none;
+			}
+			.back {
+				display: block;
+			}
+		} */
+
 		border: 2px solid #CCCCCC;
-		float: left;
-		width: 225px;
-		height: 250px;
-		text-align: center;
-		margin-right: 10px;
 		border-radius: 15px;
+
+		float: left;
+		width: 240px;
+		overflow-y: auto;
+		height: 260px;
+		margin-right: 10px;
+
 		margin-bottom: 10px;
-		padding: 15px 25px;
-		
+		padding: 25px 20px;
+
 		&:last-child {
 			margin-right: 0px;
 		}
 
-		& img.author-image {
+		img.author-image {
 			display: block;
 			width: 100px;
 			height: auto;
-			margin: 10px auto 25px auto;
+			margin: 0 auto 20px auto;
 		}
 
-		& div.author-title {
+		div.author-title {
 			margin: 5px auto;
 			font-weight: bold;
 			font-size: 500;
+			text-align: center;
+		}
+
+		ul.social-media-list {
+			margin: 0;
 		}
 
 		@include media-query($on-palm) {
