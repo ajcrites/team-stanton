@@ -1,8 +1,8 @@
-::-webkit-scrollbar {
-		display: none;
-}
-
 div.authors-container {
+
+	& ::-webkit-scrollbar {
+			display: none;
+	}
 
 	div.author-card {
 
