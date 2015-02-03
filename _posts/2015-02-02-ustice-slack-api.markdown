@@ -5,7 +5,7 @@ date:   2015-02-02 11:00:00
 category: javascript
 author: ustice
 ---
-![](https://slack.global.ssl.fastly.net/22690/img/landing_slack_hash_wordmark_logo.png)
+![](https://slack.global.ssl.fastly.net/22690/img/landing_slack_hash_wordmark_logo.png){: .has-border.is-centered}
 
 If you haven't heard already, [Slack](https://slack.com) is a [fast-growing](http://www.businessinsider.com/andreessen-slack-has-gone-crazy-viral-2014-2) communications platform for organizations. It's basically [IRC](http://en.wikipedia.org/wiki/Internet_Relay_Chat) with super powers, and let's you integrate with all kinds of services out of the box.
 
