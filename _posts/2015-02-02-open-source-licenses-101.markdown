@@ -29,6 +29,8 @@ There are a ton of details and nuance, so please do not assume anything I say he
 
 ### Apache v2.0 
 
+This is a pretty flexible license that requires you to keep all notices of contribution and attribution but very few other restrictions.
+
 The **licensor** owns the copyright and grants the license.
 
 A **contribution** is any work submitted to the licensor that hasn't been marked as _not a contribution_ in some way. This means a pull request is a contribution. A closed pull request has been conspiculously marked as _not a contribution_. If the pull request is merged by the licensor, then you are officially a **contributor**.
@@ -45,3 +47,14 @@ You can redistribute the source almost anyway you want as long as you:
 4. Keep the content of a NOTICE text file
 
 You are assuming all liability and expecting zero warranty from the licensor. 
+
+### MIT
+
+This is the most open of the major open source licenses. The only requirement is to include the following notice wherever the full original work or any substantial parts of the original work might have be extracted:
+
+> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+>
+> The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+There are no warranties. This is the #yolo of open source licenses.
