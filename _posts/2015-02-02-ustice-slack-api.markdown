@@ -11,7 +11,7 @@ If you haven't heard already, [slack](https://slack.com) is a [fast-growing](htt
 
 But what if you want to integrate it into some other service or project of your own? Luckily, they have a great [api](https://api.slack.com/) for that, but I found it a bit tedious to use HTTPS requests and doing all of the error-handling for each of them. I looked for a good javascript library for slack, but there just wasn't one that was complete.
 
-So I wrote my own.
+[So I wrote my own](https://github.com/Ustice/slack-api).
 
 ### slack-api
 
@@ -19,7 +19,7 @@ So I wrote my own.
 
 #Installation
 
-`slack-api` is published on [npm](https://npmjs.org), so it's super easy to install. In your Node project directory, just simply type:
+`slack-api` is published on [npm](https://www.npmjs.com/package/slack-api), so it's super easy to install. In your Node project directory, just simply type:
 
 {% highlight bash%}
 npm install --save slack-api
