@@ -7,7 +7,7 @@ author: ustice
 ---
 ![](https://slack.global.ssl.fastly.net/22690/img/landing_slack_hash_wordmark_logo.png)
 
-If you haven't heard already, [slack](https://slack.com) is a [fast-growing](http://www.businessinsider.com/andreessen-slack-has-gone-crazy-viral-2014-2) communications platform for organizations. It's basically [IRC](http://en.wikipedia.org/wiki/Internet_Relay_Chat) with super powers, and let's you integrate with all kinds of services out of the box.
+If you haven't heard already, [Slack](https://slack.com) is a [fast-growing](http://www.businessinsider.com/andreessen-slack-has-gone-crazy-viral-2014-2) communications platform for organizations. It's basically [IRC](http://en.wikipedia.org/wiki/Internet_Relay_Chat) with super powers, and let's you integrate with all kinds of services out of the box.
 
 But what if you want to integrate it into some other service or project of your own? Luckily, they have a great [api](https://api.slack.com/) for that, but I found it a bit tedious to use HTTPS requests and doing all of the error-handling for each of them. I looked for a good javascript library for slack, but there just wasn't one that was complete.
 
