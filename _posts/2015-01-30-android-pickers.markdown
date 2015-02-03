@@ -16,7 +16,7 @@ More often than not, you will find yourself in need of a "picker". The Android S
 
 ## I want a picker now, though!
 
-The Android SDK includes classes which extend from the [`AlertDialog`](http://developer.android.com/reference/android/app/AlertDialog.html) class, which give us immediate access to a time or date picker in a dialog, and a simple event listener for when the date/time is set.
+The Android SDK includes classes which extend from the [`AlertDialog`](http://developer.android.com/reference/android/app/AlertDialog.html) class, which give us immediate access to a time or date picker in a dialog and a simple event listener for when the date/time is set.
 
 # Time
 
@@ -92,7 +92,7 @@ The following is a very simple example of how you can include both date and time
 
 # XML Layout
 
-NOTE: If you aren't interested in having a separate XML file to keep track of (maybe you want to keep the dialog-related code in a single `.java` file) then you can generate this layout using code as well, and use that `View` instead of inflating this XML file.
+NOTE: If you aren't interested in having a separate XML file to keep track of (maybe you want to keep the dialog-related code in a single `.java` file) then you can generate this layout using code as well and use that `View` instead of inflating this XML file.
 
 {% highlight xml %}
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -154,7 +154,7 @@ The resulting dialog will be something like this:
 {:.screenshot}
 ![](http://i.imgur.com/nYFxOk4.png)
 
-...wait a minute. That doesn't exactly look very nice, does it? This is because, in XML, each view is using it's default appearance parameters. For example, to get rid of the "full calendar view" and just return to regular spinning pickers, the following adjustment has to be made to the `<DatePicker />` tag:
+...wait a minute. That doesn't exactly look very nice, does it? This is because, in XML, each view is using its default appearance parameters. For example, to get rid of the "full calendar view" and just return to regular spinning pickers, the following adjustment has to be made to the `<DatePicker />` tag:
 
 {% highlight xml %}
 <DatePicker
@@ -185,7 +185,7 @@ The following examples will run through some short code snippets, a brief descri
 
 # Numbers
 
-To create the most basic number picker, all we have to do is set the minimum and maximum values for the picker, and it will do the rest for us. (you can also set your own range, like numbers 11 through 20)
+To create the most basic number picker, all we have to do is set the minimum and maximum values for the picker, and it will do the rest for us. (you can also set your own range, like numbers 11 through 20):
 
 {% highlight java %}
 NumberPicker myNumberPicker = new NumberPicker(this);
@@ -209,7 +209,7 @@ new AlertDialog.Builder(this).setView(myNumberPicker).show();
 
 # Text
 
-For this example, as well as the upcoming one, we will use an array of items to display them in your picker. We still have to set the min/max values for your picker; and in this case, they will be 0 and "length - 1" respectively. The difference is, that in this case, we pass our array to the picker by calling its `setDisplayedValues()` method.
+For this example, as well as the upcoming one, we will use an array of items to display them in your picker. We still have to set the min/max values for your picker; and in this case, they will be 0 and "length - 1" respectively. The difference is, that in this case, we pass our array to the picker by calling its `setDisplayedValues()` method:
 
 {% highlight java %}
 final String genders[] = { "Male", "Female" };
@@ -236,7 +236,7 @@ new AlertDialog.Builder(this).setView(myNumberPicker).show();
 
 # Interval-based Numbers
 
-As you will be able to guess from the associated snippet, this kind of a picker is very similar to the string picker, where we basically store the intended numbers as an array of strings, and display them in the picker.
+As you will be able to guess from the associated snippet, this kind of a picker is very similar to the string picker, where we basically store the intended numbers as an array of strings and display them in the picker:
 
 {% highlight java %}
 final ArrayList<String> numbersAsStrings = new ArrayList<>();
@@ -265,7 +265,7 @@ new AlertDialog.Builder(this).setView(myNumberPicker).show();
 {:.screenshot}
 ![](http://i.imgur.com/jTblnUr.png)
 
-Please feel free to tweak the appearances of the pickers to your liking either programmatically, or via XML in your layout file.
+Please feel free to tweak the appearances of the pickers to your liking either programmatically or via XML in your layout file.
 
 ## Thank You
 
