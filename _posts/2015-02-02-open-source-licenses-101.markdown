@@ -58,3 +58,19 @@ copies of the Software, and to permit persons to whom the Software is furnished 
 > The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 There are no warranties. This is the #yolo of open source licenses.
+
+### GPLv3
+
+This one is [really long](http://opensource.org/licenses/GPL-3.0). 
+
+You can run the code as much as you want and for whatever reasons you want. You can distribute the unmodified source and even charge for it. You can also charge for warranties and services for running and maintaining the unmodified source. 
+
+You can extend the functionality as long as you aren't modifying the original work. This is one reason you see a common WordPress core and then a robust plguin community to extend core. 
+
+If you modify the original work, then you have to license all of your additional changes under this GPLv3 license as well. The key definiton is regarding a the **aggregate**:
+
+> A compilation of a covered work with other separate and independent works, which are not by their nature extensions of the covered work, and which are not combined with it such as to form a larger program, in or on a volume of a storage or distribution medium, is called an “aggregate” if the compilation and its resulting copyright are not used to limit the access or legal rights of the compilation's users beyond what the individual works permit. Inclusion of a covered work in an aggregate does not cause this License to apply to the other parts of the aggregate. ([OSI](http://opensource.org/licenses/GPL-3.0), 2015)
+
+You can include GPLv3 libraries in aggregate work without automatically triggers the GPLv3 license to cover your entire work _is you have not modified the original work in any way at all_. This is gray area and easy to trample. You should either have very strict tracking and auditing of how you use GPLv3 libraries in other projects or avoid these licenses altogether. 
+
+At Mobiquity, we prefer to avoid GPLv3 for client project because we don't want to accidentally modified the original work and as a side effect trigger a client project to forcefully assume a GPLv3 license as well.
