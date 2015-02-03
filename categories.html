@@ -11,7 +11,7 @@ title: Categories
       <li>{{ cat.pretty }}</li>
       <ul>
         {% for post in site.posts %}
-          {% if post.category == cat.name %}
+          {% if cat.keywords contains post.category %}
             <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
           {% endif %}
         {% endfor %}
