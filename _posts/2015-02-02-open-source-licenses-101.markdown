@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "Open Source Licenses 101"
+date:   2015-02-02 20:11:00
+category: taft
+author: gotoplanb
+---
+
+## What is an open source license?
+
+Simply an open-source license must comply with the criteria of the [Open Source Initative](http://opensource.org/osd), which is a [non-profit 501(c)3 registered in California](http://opensource.org/about). The critera (and short definitions) are:
+
+1. No fees for redistribution
+2. Must provide source code
+3. Allows for derived works
+4. Integrity of the author's source instead of so much modification original is unrecognizable
+5. No discrimation
+6. No restrictions on why the source is used
+7. License details are included with the source
+8. Source must me distributable by itself
+9. License cannot restrict other software
+10. Licenses cannot dictate specific technologies
+
+## Dislaimer: I'm not your lawyer
+
+There are a ton of details and nuance, so please do not assume anything I say here to be in the galaxy of legal advice. If you have lots of time or money at stake, you should probably talk with an attorney. I'm going to try and give enough detail to help you narrow your reading to a couple licenses and go from there to determine which is best for you.
+
+## Which license should I use?
+
+### Apache v2.0 
+
+The **licensor** owns the copyright and grants the license.
+
+A **contribution** is any work submitted to the licensor that hasn't been marked as _not a contribution_ in some way. This means a pull request is a contribution. A closed pull request has been conspiculously marked as _not a contribution_. If the pull request is merged by the licensor, then you are officially a **contributor**.
+
+A fork of a GitHub repository is an example of a **derivative work** with the original repository being the **work**.
+
+The licensor and each contributor, "hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form" ([OSI](http://opensource.org/licenses/Apache-2.0), 2015). You can even submit a patent for derivative works you create. However, if you file some lawsuit against the licensor of the original work, then you lose the right to use the original work. Plus you'd be a huge jerk. 
+
+You can redistribute the source almost anyway you want as long as you:
+
+1. Include the license
+2. Make obvious notice of any modified files
+3. Retain all notices of attribution and contribution
+4. Keep the content of a NOTICE text file
+
+You are assuming all liability and expecting zero warranty from the licensor. 
