@@ -84,3 +84,11 @@ The Mozilla Public License is somewhere between MIT and GPLv3. Here's the crux r
 You can modify MPL works in your larger work without the MPL license having to bubble up to the rest of the larger work like in GPLv3.
 
 Also worth noting that if you break some rule of this license, you can fix your violations and then be back in the good graces of the licensor. 
+
+### More licenses
+
+There are many more open source licenses. Here's a [list of other popular licenses](http://opensource.org/licenses/).
+
+### Contribute
+
+I'd love some help writing up summaries of other licenses as well as providing examples of software we use that falls under each license type along with pros and cons of that license type.
