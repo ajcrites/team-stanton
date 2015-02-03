@@ -13,3 +13,7 @@
 - name: fire
   pretty: Fire
   keywords: [fire, profire, fireman, firetruck, component, workflow]
+
+- name: taft
+  pretty: Taft
+  keywords: [process, legal, workflow]
