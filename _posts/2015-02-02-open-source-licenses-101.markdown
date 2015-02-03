@@ -17,7 +17,7 @@ Simply an open-source license must comply with the criteria of the [Open Source 
 5. No discrimation
 6. No restrictions on why the source is used
 7. License details are included with the source
-8. Source must me distributable by itself
+8. Source must be distributable by itself
 9. License cannot restrict other software
 10. Licenses cannot dictate specific technologies
 
@@ -87,7 +87,7 @@ Also worth noting that if you break some rule of this license, you can fix your 
 
 ### More licenses
 
-There are many more open source licenses. Here's a [list of other popular licenses](http://opensource.org/licenses/).
+There are many more open source licenses. Here's a [list of other popular licenses](http://choosealicense.com/licenses/). Here's a [site that helps you choose the best license](http://choosealicense.com/) for your project.
 
 ### Contribute
 
