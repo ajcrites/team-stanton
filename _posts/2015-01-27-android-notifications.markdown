@@ -51,9 +51,8 @@ NotificationManager myNotificationManager = (NotificationManager) this.getSystem
 myNotificationManager.notify(111, myNotification);
 {% endhighlight %}
 
-{:.screenshot}
-![](http://i.imgur.com/XmBZWtp.png)
-![](http://i.imgur.com/0UOJk3v.png)
+![](http://i.imgur.com/XmBZWtp.png){:.screenshot}
+![](http://i.imgur.com/0UOJk3v.png){:.screenshot}
 
 As you can see, the notification is displayed using the small notification icon, but when you expand the notification panel, a white tile is displayed. This can be remedied by calling the `.setLargeIcon()` method in your `NotificationCompat.Builder` instance. For example:
 
@@ -64,8 +63,7 @@ myBuilder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.m
 
 And now, the notification will no longer have a generic white tile.
 
-{:.screenshot}
-![](http://i.imgur.com/Iwa0PbF.png)
+![](http://i.imgur.com/Iwa0PbF.png){:.screenshot}
 
 # Customizing the Notification
 
@@ -79,8 +77,7 @@ myBuilder.setStyle(new NotificationCompat.BigTextStyle().bigText(myLongText));
 
 And now, the content text will change as you expand the notification.
 
-{:.screenshot}
-![](http://i.imgur.com/FUeQcxq.gif)
+![](http://i.imgur.com/FUeQcxq.gif){:.screenshot}
 
 #### Other Notification Options/Flags
 
@@ -129,8 +126,7 @@ myNotification.flags |= Notification.FLAG_AUTO_CANCEL;
 
 The above step assumes that you have already set a `PendingIntent` for the notification. Otherwise, the only way to dismiss the notification is to swipe it.
 
-{:.screenshot}
-![](http://i.imgur.com/Q0vxGFH.gif)
+![](http://i.imgur.com/Q0vxGFH.gif){:.screenshot}
 
 
 # Thank You!
