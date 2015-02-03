@@ -1,0 +1,19 @@
+img {
+  &.screenshot {
+    display: block;
+    margin: 0 auto;
+    max-width: 400px;
+    height: auto;
+  }
+
+  &.has-border {
+    border: 1px solid $text-color;
+    padding: 0.25em;
+    border-radius: 1px;
+  }
+
+  &.is-centered {
+    margin: 0 auto;
+    display: block;
+  }
+}

@@ -54,8 +54,8 @@ new TimePickerDialog(this,
 
 This results in a picker that looks like:
 
-{:.screenshot}
-![](http://i.imgur.com/TO6Xs2x.png)
+
+![](http://i.imgur.com/TO6Xs2x.png){:.screenshot}
 
 # Date
 
@@ -79,8 +79,8 @@ new DatePickerDialog(this,
 
 This results in a picker that looks like:
 
-{:.screenshot}
-![](http://i.imgur.com/hZaZ6XL.png)
+
+![](http://i.imgur.com/hZaZ6XL.png){:.screenshot}
 
 ## Why not both?
 
@@ -151,8 +151,7 @@ builder.show();
 
 The resulting dialog will be something like this:
 
-{:.screenshot}
-![](http://i.imgur.com/nYFxOk4.png)
+![](http://i.imgur.com/nYFxOk4.png){:.screenshot}
 
 ...wait a minute. That doesn't exactly look very nice, does it? This is because, in XML, each view is using its default appearance parameters. For example, to get rid of the "full calendar view" and just return to regular spinning pickers, the following adjustment has to be made to the `<DatePicker />` tag:
 
@@ -170,8 +169,7 @@ The resulting dialog will be something like this:
 
 Now, let's take another look.
 
-{:.screenshot}
-![](http://i.imgur.com/3F676Zj.png)
+![](http://i.imgur.com/3F676Zj.png){:.screenshot}
 
 Better?
 
@@ -204,8 +202,7 @@ myNumberPicker.setOnValueChangedListener(myValChangedListener);
 new AlertDialog.Builder(this).setView(myNumberPicker).show();
 {% endhighlight %}
 
-{:.screenshot}
-![](http://i.imgur.com/plFTwzb.png)
+![](http://i.imgur.com/plFTwzb.png){:.screenshot}
 
 # Text
 
@@ -231,8 +228,7 @@ myNumberPicker.setOnValueChangedListener(myValueChangedListener);
 new AlertDialog.Builder(this).setView(myNumberPicker).show();
 {% endhighlight %}
 
-{:.screenshot}
-![](http://i.imgur.com/n9bJhhN.png)
+![](http://i.imgur.com/n9bJhhN.png){:.screenshot}
 
 # Interval-based Numbers
 
@@ -262,8 +258,7 @@ myNumberPicker.setOnValueChangedListener(myValChangedListener);
 new AlertDialog.Builder(this).setView(myNumberPicker).show();
 {% endhighlight %}
 
-{:.screenshot}
-![](http://i.imgur.com/jTblnUr.png)
+![](http://i.imgur.com/jTblnUr.png){:.screenshot}
 
 Please feel free to tweak the appearances of the pickers to your liking either programmatically or via XML in your layout file.
 

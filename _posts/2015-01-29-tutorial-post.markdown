@@ -76,6 +76,10 @@ For example, let's say you have a device screenshot which has a resolution of 19
 ``{:.reducedScreenshot}``  
 ``![](http://link.to.your/screenshot.png)``
 
+Alternately, you can add the class directly on the image like so:
+
+``![](http://link.to.your/screenshot.png){:.reducedScreenshot}``
+
 Jekyll also uses [SASS](http://sass-lang.com/), so the styling process is slightly friendlier :)
 
 Now, to define your class, go into the `_sass` and add it to an existing file (like the `_posts.scss` file), or create a new `.scss` file of your choosing (make sure it is prepended by `_` as Jekyll uses that as an identifier to interpret files).
