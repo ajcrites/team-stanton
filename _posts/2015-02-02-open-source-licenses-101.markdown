@@ -74,3 +74,13 @@ If you modify the original work, then you have to license all of your additional
 You can include GPLv3 libraries in aggregate work without automatically triggers the GPLv3 license to cover your entire work _is you have not modified the original work in any way at all_. This is gray area and easy to trample. You should either have very strict tracking and auditing of how you use GPLv3 libraries in other projects or avoid these licenses altogether. 
 
 At Mobiquity, we prefer to avoid GPLv3 for client project because we don't want to accidentally modified the original work and as a side effect trigger a client project to forcefully assume a GPLv3 license as well.
+
+### MPLv2
+
+The Mozilla Public License is somewhere between MIT and GPLv3. Here's the crux regarding distribution in a larger project:
+
+> You may create and distribute a Larger Work under terms of Your choice, provided that You also comply with the requirements of this License for the Covered Software. If the Larger Work is a combination of Covered Software with a work governed by one or more Secondary Licenses, and the Covered Software is not Incompatible With Secondary Licenses, this License permits You to additionally distribute such Covered Software under the terms of such Secondary License(s), so that the recipient of the Larger Work may, at their option, further distribute the Covered Software under the terms of either this License or such Secondary License(s).
+
+You can modify MPL works in your larger work without the MPL license having to bubble up to the rest of the larger work like in GPLv3.
+
+Also worth noting that if you break some rule of this license, you can fix your violations and then be back in the good graces of the licensor. 
