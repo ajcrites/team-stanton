@@ -29,11 +29,11 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 
 You can embed videos like so:
 
-```html
+{::nomarkdown}
 <div class="embed">
 	<iframe src="https://www.youtube.com/embed/PNcDI_uBGUo" frameborder="0" allowfullscreen></iframe>
 </div>
-```
+{:/nomarkdown}
 
 This uses a default 16x9 aspect ratio. If you need a 4x3, use `class="embed ratio-4x3"` instead. If you we need more ratios, add them to `_sass/modules/_embeds.scss`.
 
