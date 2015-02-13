@@ -1,6 +1,6 @@
 - name: ios
   pretty: iOS
-  keywords: [ios, apple, uikit, watchkit]
+  keywords: [ios, apple, uikit, watchkit, swift]
 
 - name: android
   pretty: Android
@@ -16,4 +16,4 @@
 
 - name: taft
   pretty: Taft
-  keywords: [process, legal, workflow]
+  keywords: [taft, process, legal, workflow]
