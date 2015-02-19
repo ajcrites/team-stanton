@@ -1,0 +1,259 @@
+---
+layout: post
+title:  "WebViews in Android"
+date:   2015-02-14 13:41:00
+category: android
+author: ashajgotra
+---
+
+In this blog we are going to look at `WEBVIEWS`.
+
+Android delivers apps in two ways. One is the client side app developed using android sdk and delivered as apk and the second is the web application developed using web standards and made available to android through browers on an inbuilt API known as `WEBVIEWS`. In this blog we are going to dive into Webviews to get some understanding.
+
+## WebViews in Android
+
+WebView is the basic building block for displaying web pages in Android. It can be used to display any online content in an Activity or could be used to build your own browser.It provides functionality like zooming, text searches etc. In its basic form it does not enable java script and ignores web errors supporting only basic HTML functionality.
+
+# WebView Use-Cases
+
+Making use of `Webviews` makes sense:
+
+- when rendering information that requires to be updated regularly e.g. user-guide. In such case it is better to display online document in a webview.
+- if app requires to be online to fetch data e.g. email. Rather than retrieving data on network call and displaying in layout it is better to design web page tailored for Android devices and load the web page in webview.
+
+# Adding WebView to App
+
+Webview can be added to an android following these simple steps:
+
+- Include `<WebView>` element in activity layout. e.g.
+	
+	{% highlight xml %}
+	
+	<?xml version="1.0" encoding="utf-8"?>
+	<WebView  xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/webview"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	/>
+	
+	{% endhighlight %}
+- load web page in the WebView using `loadUrl()`.
+	
+	{% highlight java %}
+	
+	WebView myWebView = (WebView) findViewById(R.id.webview);
+	myWebView.loadUrl("http://www.example.com");
+	
+	{% endhighlight %}
+- app must have `INTERNET` permission in manifest file
+
+	{% highlight xml %}
+	
+	<manifest ... >
+	    <uses-permission android:name="android.permission.INTERNET" />
+	    ...
+	</manifest>
+	
+	{% endhighlight %}
+
+# Using JavaScript
+
+`JavaScript` in webviews is disabled by default. It can be enabled as shown below:
+
+	{% highlight java %}
+	
+	WebView myWebView = (WebView) findViewById(R.id.webview);
+	WebSettings webSettings = myWebView.getSettings();
+	webSettings.setJavaScriptEnabled(true);
+	
+	{% endhighlight %}
+	
+	
+#### Binding  JavaScript to Android code
+
+ `JavaScript` code in web pages can be bound to Android code using `interfaces`. e.g. we can define a class as below
+ 
+ {% highlight java %}
+ 
+ public class WebAppInterface {
+     Context mContext;
+
+     /** Instantiate the interface and set the context */
+     WebAppInterface(Context c) {
+         mContext = c;
+     }
+
+     /** Show a toast from the web page */
+     @JavascriptInterface
+     public void showToast(String toast) {
+         Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show();
+     }
+  }
+
+{% endhighlight %}
+	
+To make the desired method available to javascript from Android 4.2 `@JavascriptInterface` needs to be added to the method. Then bind the webview with the interface as:
+
+ {% highlight java %}
+ 
+ WebView webView = (WebView) findViewById(R.id.webview);
+ webView.addJavascriptInterface(new WebAppInterface(this), "Android");
+
+{% endhighlight %}
+
+Here the interface has been named `Android`. Then finally ths `showToast` method can be made available to javascript as:
+
+ 
+ {% highlight html %}
+ 
+ <input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
+
+ <script type="text/javascript">
+     function showAndroidToast(toast) {
+         Android.showToast(toast);
+     }
+ </script>
+
+{% endhighlight %}
+
+#### Handling Page Navigation
+	
+App users can be provided the functionality of opening a link in the webview rather than opening it in browser although the best practise is to avoid letting user open web pages from links within the webview. 
+
+In order to prevent such beviour webview needs to be connected to the webviewclient as:
+
+{% highlight java %}
+
+	WebView myWebView = (WebView) findViewById(R.id.webview);
+	myWebView.setWebViewClient(new WebViewClient());
+	
+{% endhighlight %}
+
+We can control the tool used to open the link by overriding the `shouldOverrideUrlLoading()` method of  `WebViewClient` e.g.
+
+{% highlight java %}
+
+	private class MyWebViewClient extends WebViewClient {
+	    @Override
+	    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+	        if (Uri.parse(url).getHost().equals("www.example.com")) {
+	            // This is my web site, so do not override; let my WebView load the page
+	            return false;
+	        }
+	        // Otherwise, the link is not for a page on my site, so launch another Activity that handles URLs
+	        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+	        startActivity(intent);
+	        return true;
+	    }
+	}
+	
+	/// assigning customized WebViewClient to WebView
+	WebView myWebView = (WebView) findViewById(R.id.webview);
+	myWebView.setWebViewClient(new MyWebViewClient());
+	
+{% endhighlight %}
+
+So now if the link points to `www.example.com` then it would be opened in the webview otherwise browser app would be called up.
+
+#### Navigating Web Page History
+
+While over-riding url loading, webview accumlates history of visited web pages which can be navigated using `goback()` and `goforward()` methods. To check whether there is any page for back or front navigation, we can use `canGoBack()` or `canGoForward()` methods as shown below:
+
+{% highlight java %}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	    // Check if the key event was the Back button and if there's history
+	    if ((keyCode == KeyEvent.KEYCODE_BACK) && myWebView.canGoBack()) {
+	        myWebView.goBack();
+	        return true;
+	    }
+	    // If it wasn't the Back key or there's no web page history, bubble up to the default
+	    // system behavior (probably exit the activity)
+	    return super.onKeyDown(keyCode, event);
+	}
+	
+{% endhighlight %}
+
+#### Loading HTML Files from File System
+
+Webviews also provide advantage for apps supporting offline mode by providing the functionality to loads assets from local file system. `assets` directory is located in `src/main/assets` and can be used to store HTML, JavaScript, CSS files etc.. From this `assets` directory we can load an html file like this:
+
+{% highlight java %}
+
+mWebView.loadUrl("file:///android_asset/www/index.html");
+
+{% endhighlight %}
+
+# Customising Webviews
+
+We can customize webview to better meet our needs:
+
+ - Using `WebChromeClient` subclass we can control the UI of the browser e.g. progress updates and javascript alerts.
+ - `WebViewClient` class controls the rendering of the content e.g. form submission
+ - `WebSettings` provides lot of setting options such as enabling javascript through `setJavaScriptEnabled()`
+ - As described earlier through `addJavascriptInterface(Object,String)` method java objects can be injected into webview.
+
+
+# Enhancements in KitKat
+
+A lot of new functionalities have been added to webview in KitKat version which makes it a lot different and advanced than the earlier verions. The new webview is based on [Chromium](http://www.chromium.org/Home) which is an open source project aimed at building faster, safer and more stable web browsers. It allows webview to support HTML5, CSS3 and javascript to match latest web browsers. 
+
+#### User Agent Changes
+
+A browser's user agent string helps to identify which browser is being used, what version and on which operating system. In Kitkat `chrome` version has been added to it.
+
+`Mozilla/5.0 (Linux; Android 4.4; Nexus 4 Build/KRT16H) AppleWebKit/537.36
+(KHTML, like Gecko) Version/4.0 **Chrome/30.0.0.0** Mobile Safari/537.36`
+
+Also if user agent string needs to be overridden `getUserAgentString()` method can be used otherwise static `getDefaultUserAgent()` method is good.
+
+#### Multi-threading and Thread Blocking
+
+Webview should always excute on the main `UI` thread. To insure this `runOnUiThread()` method can be used as:
+
+{% highlight java %}
+
+	runOnUiThread(new Runnable() {
+	    @Override
+	    public void run() {
+	        // Code for WebView goes here
+	    }
+	});
+	
+{% endhighlight %}
+
+Also following android standards the main `UI` thread should never be blocked. So waiting for a javacript callback on main thread is a bad practise instead `evaluateJavascript()` method should be used which asynchronously evaluates javascript for currently loading page.
+
+#### Custom Url Handling
+
+The new webview does not support custom URLs when requesting resources or resolving links. The URLs specified should confirm to [RFC 3986](http://tools.ietf.org/html/rfc3986#appendix-A)
+
+#### Viewport Changes
+
+ - Earlier android version used to support property called `target-densitydpi` which indicated the supported screen densties but in Kitkat it has been deprecated.
+ - In Kitkat the value specified for viewport width or height is adhered and webview zooms in to fill screen width
+ - Kitkat only supports the last defined viewport tag unlike earlier version which used to combine properties from all tags.
+ - `getDefaultZoom()` and `setDefaultZoom()` methods used to get and set the page zoom level have also been deprecated. 
+ 
+#### Styling Changes
+
+`NARROW_COLUMNS` and `SINGLE_COLUMN` values for `WebSettings.LayoutAlgorithm` have been deprecated for more effective `TEXT_AUTOSIZING` value.
+
+#### Handling Touch Events in JavaScript
+
+In KitKat handling `touchcancel` event is must for handling touch events in webview. It will be called e.g. when an element is touched and page is scrolled. 
+
+# WebView Upgrades in Lollipop
+
+- Added new security and stability enhancements
+- User agent string has been updated to version number `37.0.0.0`
+- Now Webview can be granted access to resources like camera and microphone through `PermissionRequest` class
+- Through `onShowFileChooser()` method Webview can be granted access to images and files
+- Support for open standards like `WebAudio, WebGL, and WebRTC` have been introduced.
+- If the target api is set to api level 21 then the system allows use of mixed content and third party cookies. It allows carefully chooses HTML page portions to be displayed helping to reduce memory consumption and increase performance.
+
+
+# Thank You!
+
+Hope you liked this article. Your comments and suggestions are always welcome!
