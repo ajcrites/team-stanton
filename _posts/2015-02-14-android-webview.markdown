@@ -21,6 +21,11 @@ Making use of `Webviews` makes sense:
 - when rendering information that requires to be updated regularly e.g. user-guide. In such case it is better to display online document in a webview.
 - if app requires to be online to fetch data e.g. email. Rather than retrieving data on network call and displaying in layout it is better to design web page tailored for Android devices and load the web page in webview.
 
+But there are some scenarios where the use of `Webviews` should be avoided
+
+- when the requirement is to have all the features of a web browser then instead of using `webviews` which by default lacks features such as navigation, address bar it makes sense to use default web browser application.
+
+
 # Adding WebView to App
 
 Webview can be added to an android following these simple steps:
@@ -185,6 +190,10 @@ mWebView.loadUrl("file:///android_asset/www/index.html");
 
 {% endhighlight %}
 
+#### Enabling Zoom feature
+
+Default zoom functionality for a webview can be set using `WebSettings.setBuiltInZoomControls(boolean)` method.
+
 # Customising Webviews
 
 We can customize webview to better meet our needs:
@@ -193,6 +202,17 @@ We can customize webview to better meet our needs:
  - `WebViewClient` class controls the rendering of the content e.g. form submission
  - `WebSettings` provides lot of setting options such as enabling javascript through `setJavaScriptEnabled()`
  - As described earlier through `addJavascriptInterface(Object,String)` method java objects can be injected into webview.
+
+# Supporting Different Screen Densities
+
+Android devices are divided into three categories based on screen densities: low, medium and high. By Default `Webview` scales web page for a medium density device. But using certain features the appropriate device densities can be targeted:
+
+ - First `window.devicePixelRatio` DOM property which specifies the scaling to be applied. If its value is `1.0` the targeted device is medium density one and default scaling is used, if value is `1.5` device is having high density and scaling of `1.5` is applied and value of `0.75` scales by the same amount for low density device.
+ - `-webkit-device-pixel-ratio` CSS media query which supports value of 0.75,1,1.5 respectievly for low, medium and high density devices. e.g. high density devices can be targeted as:
+ 
+ 	`<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio:1.5)" href="hdpi.css" />`
+	
+
 
 
 # Enhancements in KitKat
