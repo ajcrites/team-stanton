@@ -6,9 +6,7 @@ category: android
 author: ashajgotra
 ---
 
-In this blog we are going to look at `WEBVIEWS`.
-
-Android delivers apps in two ways. One is the client side app developed using android sdk and delivered as apk and the second is the web application developed using web standards and made available to android through browers on an inbuilt API known as `WEBVIEWS`. In this blog we are going to dive into Webviews to get some understanding.
+Android delivers apps in three ways. First is the client-side (native) app developed using the Android SDK and delivered as an installable APK. The second delivery method is for a web application developed using web standards and made available to Android through a native Android web browser application. Finally, we can deliver a web application through an embedded web browser instantiated within a native Android APK using the [WebView](http://developer.android.com/reference/android/webkit/WebView.html) API. In this article, we will explore how to use the WebView API along with strengths and weaknesses compared to native display or browser display.
 
 ## WebViews in Android
 
