@@ -10,25 +10,24 @@ Android delivers apps in three ways. First is the client-side (native) app devel
 
 ## WebViews in Android
 
-WebView is the basic building block for displaying web pages in Android. It can be used to display any online content in an Activity or could be used to build your own browser.It provides functionality like zooming, text searches etc. In its basic form it does not enable java script and ignores web errors supporting only basic HTML functionality.
+WebView is the basic building block for displaying web pages in Android. It can be used to display any online content during an activity or could be used to build your own browser. It provides functionality like zooming, text searches, copy/paste and other built-in actions users expect in order to interact with web pages. By default, a WebView will not execute JavaScript, ignores web errors supporting, and only allows basic HTML functionality.
 
-# WebView Use-Cases
+### WebView Uses
 
-Making use of `Webviews` makes sense:
+Making use of Webviews makes sense:
 
-- when rendering information that requires to be updated regularly e.g. user-guide. In such case it is better to display online document in a webview.
-- if app requires to be online to fetch data e.g. email. Rather than retrieving data on network call and displaying in layout it is better to design web page tailored for Android devices and load the web page in webview.
+* when rendering information that will be updated regularly (e.g. user guide). In such case it is better to display an HTML document in a webview versus hardcoding into the application.
+* if the application requires active network connection to fetch data (e.g. email). Rather than retrieving data via a network call and displaying in layout, it is better to design a responsive web page and render HTML in a WebView.
 
-But there are some scenarios where the use of `Webviews` should be avoided
+Avoid using Webviews:
 
-- when the requirement is to have all the features of a web browser then instead of using `webviews` which by default lacks features such as navigation, address bar it makes sense to use default web browser application.
+* when the requirement is to have all the features of a web browser. WebView lack features such as navigation and the address bar. If you need these featuers, it makes sense to use default web browser application.
 
+### Adding WebView to App
 
-# Adding WebView to App
+A WebView can be added to an Anroid application following these simple steps:
 
-Webview can be added to an android following these simple steps:
-
-- Include `<WebView>` element in activity layout. e.g.
+* Include `<WebView>` element in activity layout. e.g.
 	
 	{% highlight xml %}
 	
@@ -40,7 +39,7 @@ Webview can be added to an android following these simple steps:
 	/>
 	
 	{% endhighlight %}
-- load web page in the WebView using `loadUrl()`.
+* load web page in the WebView using `loadUrl()`.
 	
 	{% highlight java %}
 	
@@ -48,7 +47,7 @@ Webview can be added to an android following these simple steps:
 	myWebView.loadUrl("http://www.example.com");
 	
 	{% endhighlight %}
-- app must have `INTERNET` permission in manifest file
+* app must have `INTERNET` permission in manifest file
 
 	{% highlight xml %}
 	
@@ -59,9 +58,9 @@ Webview can be added to an android following these simple steps:
 	
 	{% endhighlight %}
 
-# Using JavaScript
+#### Using JavaScript
 
-`JavaScript` in webviews is disabled by default. It can be enabled as shown below:
+JavaScript is disabled for a WebView by default. It can be enabled as shown below:
 
 	{% highlight java %}
 	
@@ -72,7 +71,7 @@ Webview can be added to an android following these simple steps:
 	{% endhighlight %}
 	
 	
-#### Binding  JavaScript to Android code
+#### Binding JavaScript to Android code
 
  `JavaScript` code in web pages can be bound to Android code using `interfaces`. e.g. we can define a class as below
  
@@ -95,7 +94,7 @@ Webview can be added to an android following these simple steps:
 
 {% endhighlight %}
 	
-To make the desired method available to javascript from Android 4.2 `@JavascriptInterface` needs to be added to the method. Then bind the webview with the interface as:
+To make the desired method available to JavaScript from Android 4.2 `@JavascriptInterface` needs to be added to the method. Then bind the WebView with the interface as:
 
  {% highlight java %}
  
@@ -104,8 +103,7 @@ To make the desired method available to javascript from Android 4.2 `@Javascript
 
 {% endhighlight %}
 
-Here the interface has been named `Android`. Then finally ths `showToast` method can be made available to javascript as:
-
+Here the interface has been named `Android`. Then finally ths `showToast` method can be made available to JavaScript as:
  
  {% highlight html %}
  
@@ -121,9 +119,9 @@ Here the interface has been named `Android`. Then finally ths `showToast` method
 
 #### Handling Page Navigation
 	
-App users can be provided the functionality of opening a link in the webview rather than opening it in browser although the best practise is to avoid letting user open web pages from links within the webview. 
+App users can be provided the functionality of opening a link in the WebView rather than opening it in browser although the best practise is to avoid letting user open web pages from links within the webview. 
 
-In order to prevent such beviour webview needs to be connected to the webviewclient as:
+In order to prevent such behavior, WebView needs to be connected to the webviewclient as:
 
 {% highlight java %}
 
@@ -132,7 +130,7 @@ In order to prevent such beviour webview needs to be connected to the webviewcli
 	
 {% endhighlight %}
 
-We can control the tool used to open the link by overriding the `shouldOverrideUrlLoading()` method of  `WebViewClient` e.g.
+We can control the tool used to open the link by overriding the `shouldOverrideUrlLoading()` method of  `WebViewClient` in this way:
 
 {% highlight java %}
 
@@ -156,11 +154,11 @@ We can control the tool used to open the link by overriding the `shouldOverrideU
 	
 {% endhighlight %}
 
-So now if the link points to `www.example.com` then it would be opened in the webview otherwise browser app would be called up.
+So now if the link points to `www.example.com` then it would be opened in the WebView otherwise browser app would be called up.
 
 #### Navigating Web Page History
 
-While over-riding url loading, webview accumlates history of visited web pages which can be navigated using `goback()` and `goforward()` methods. To check whether there is any page for back or front navigation, we can use `canGoBack()` or `canGoForward()` methods as shown below:
+While overriding URL loading, WebView accumlates history of visited web pages which can be navigated using `goback()` and `goforward()` methods. To check whether there is any page for back or front navigation, we can use `canGoBack()` or `canGoForward()` methods as shown below:
 
 {% highlight java %}
 
@@ -178,9 +176,9 @@ While over-riding url loading, webview accumlates history of visited web pages w
 	
 {% endhighlight %}
 
-#### Loading HTML Files from File System
+### Loading HTML Files from File System
 
-Webviews also provide advantage for apps supporting offline mode by providing the functionality to loads assets from local file system. `assets` directory is located in `src/main/assets` and can be used to store HTML, JavaScript, CSS files etc.. From this `assets` directory we can load an html file like this:
+Webviews also provide advantage for apps supporting offline mode by providing the functionality to loads assets from local file system. `assets` directory is located in `src/main/assets` and can be used to store HTML, JavaScript, CSS files etc.. From this `assets` directory we can load an HTML file like this:
 
 {% highlight java %}
 
@@ -192,32 +190,27 @@ mWebView.loadUrl("file:///android_asset/www/index.html");
 
 Default zoom functionality for a webview can be set using `WebSettings.setBuiltInZoomControls(boolean)` method.
 
-# Customising Webviews
+# Customizing Webviews
 
-We can customize webview to better meet our needs:
+We can customize a WebView to better meet our needs:
 
- - Using `WebChromeClient` subclass we can control the UI of the browser e.g. progress updates and javascript alerts.
- - `WebViewClient` class controls the rendering of the content e.g. form submission
- - `WebSettings` provides lot of setting options such as enabling javascript through `setJavaScriptEnabled()`
- - As described earlier through `addJavascriptInterface(Object,String)` method java objects can be injected into webview.
+* Using `WebChromeClient` subclass we can control the UI of the browser (e.g. progress updates and JavaScript alerts).
+* `WebViewClient` class controls the rendering of the content (e.g. form submission).
+* `WebSettings` provides many setting options such as enabling JavaScript through `setJavaScriptEnabled()`
+* As described earlier through `addJavascriptInterface(Object,String)` method Java objects can be injected into a WebView.
 
-# Supporting Different Screen Densities
+### Supporting Different Screen Densities
 
-Android devices are divided into three categories based on screen densities: low, medium and high. By Default `Webview` scales web page for a medium density device. But using certain features the appropriate device densities can be targeted:
+Android devices are divided into three categories based on screen densities: low, medium and high. By default a WebView scales the web page for a medium density device. You can target appropriate device densities to use certain features:
 
- - First `window.devicePixelRatio` DOM property which specifies the scaling to be applied. If its value is `1.0` the targeted device is medium density one and default scaling is used, if value is `1.5` device is having high density and scaling of `1.5` is applied and value of `0.75` scales by the same amount for low density device.
- - `-webkit-device-pixel-ratio` CSS media query which supports value of 0.75,1,1.5 respectievly for low, medium and high density devices. e.g. high density devices can be targeted as:
- 
- 	`<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio:1.5)" href="hdpi.css" />`
+* First `window.devicePixelRatio` DOM property which specifies the scaling to be applied. If its value is `1.0` the targeted device is medium density one and default scaling is used, if value is `1.5` device is having high density and scaling of `1.5` is applied and value of `0.75` scales by the same amount for low density device.
+* `-webkit-device-pixel-ratio` CSS media query which supports value of 0.75,1,1.5 respectievly for low, medium and high density devices. e.g. high density devices can be targeted as `<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio:1.5)" href="hdpi.css" />`
 	
+### Enhancements in KitKat
 
+New functionalities have been added to WebView in KitKat version which makes it quite different from earlier versions. The new WebView is based on [Chromium](http://www.chromium.org/Home) which is an open-source project aimed at building faster, safer and more stable web browsers. It allows a WebView to support HTML5, CSS3 and JavaScript to match latest web browsers. 
 
-
-# Enhancements in KitKat
-
-A lot of new functionalities have been added to webview in KitKat version which makes it a lot different and advanced than the earlier verions. The new webview is based on [Chromium](http://www.chromium.org/Home) which is an open source project aimed at building faster, safer and more stable web browsers. It allows webview to support HTML5, CSS3 and javascript to match latest web browsers. 
-
-#### User Agent Changes
+### User Agent Changes
 
 A browser's user agent string helps to identify which browser is being used, what version and on which operating system. In Kitkat `chrome` version has been added to it.
 
@@ -226,9 +219,9 @@ A browser's user agent string helps to identify which browser is being used, wha
 
 Also if user agent string needs to be overridden `getUserAgentString()` method can be used otherwise static `getDefaultUserAgent()` method is good.
 
-#### Multi-threading and Thread Blocking
+### Multi-threading and Thread Blocking
 
-Webview should always excute on the main `UI` thread. To insure this `runOnUiThread()` method can be used as:
+WebView should always excute on the main UI thread. To insure this `runOnUiThread()` method can be used as:
 
 {% highlight java %}
 
@@ -241,37 +234,35 @@ Webview should always excute on the main `UI` thread. To insure this `runOnUiThr
 	
 {% endhighlight %}
 
-Also following android standards the main `UI` thread should never be blocked. So waiting for a javacript callback on main thread is a bad practise instead `evaluateJavascript()` method should be used which asynchronously evaluates javascript for currently loading page.
+Also following Android standards the main UI thread should never be blocked. So waiting for a JavaScript callback on main thread is a bad practice. Instead use the `evaluateJavascript()` method to asynchronously evaluate JavaScript for the currently loading page.
 
-#### Custom Url Handling
+### Custom URL Handling
 
-The new webview does not support custom URLs when requesting resources or resolving links. The URLs specified should confirm to [RFC 3986](http://tools.ietf.org/html/rfc3986#appendix-A)
+The new WebView does not support custom URLs when requesting resources or resolving links. The URLs specified should confirm to [RFC 3986](http://tools.ietf.org/html/rfc3986#appendix-A).
 
-#### Viewport Changes
+### Viewport Changes
 
- - Earlier android version used to support property called `target-densitydpi` which indicated the supported screen densties but in Kitkat it has been deprecated.
- - In Kitkat the value specified for viewport width or height is adhered and webview zooms in to fill screen width
- - Kitkat only supports the last defined viewport tag unlike earlier version which used to combine properties from all tags.
- - `getDefaultZoom()` and `setDefaultZoom()` methods used to get and set the page zoom level have also been deprecated. 
+Earlier Android version used to support property called `target-densitydpi` which indicated the supported screen densities. This has been deprecated in Kitkat.
+
+In Kitkat, the value specified for viewport width or height is adhered and WebView zooms in to fill screen width.
+
+Kitkat only supports the last defined viewport tag unlike earlier version which used to combine properties from all tags.
+
+`getDefaultZoom()` and `setDefaultZoom()` methods used to get and set the page zoom level have also been deprecated. 
  
-#### Styling Changes
+### Styling Changes
 
-`NARROW_COLUMNS` and `SINGLE_COLUMN` values for `WebSettings.LayoutAlgorithm` have been deprecated for more effective `TEXT_AUTOSIZING` value.
+`NARROW_COLUMNS` and `SINGLE_COLUMN` values for `WebSettings.LayoutAlgorithm` have been deprecated for more efficient `TEXT_AUTOSIZING` value.
 
-#### Handling Touch Events in JavaScript
+### Handling Touch Events in JavaScript
 
-In KitKat handling `touchcancel` event is must for handling touch events in webview. It will be called e.g. when an element is touched and page is scrolled. 
+In KitKat, handling `touchcancel` event is must for handling touch events in webview. It will be called when an element is touched and page is scrolled. 
 
-# WebView Upgrades in Lollipop
+### WebView Upgrades in Lollipop
 
-- Added new security and stability enhancements
-- User agent string has been updated to version number `37.0.0.0`
-- Now Webview can be granted access to resources like camera and microphone through `PermissionRequest` class
-- Through `onShowFileChooser()` method Webview can be granted access to images and files
-- Support for open standards like `WebAudio, WebGL, and WebRTC` have been introduced.
-- If the target api is set to api level 21 then the system allows use of mixed content and third party cookies. It allows carefully chooses HTML page portions to be displayed helping to reduce memory consumption and increase performance.
-
-
-# Thank You!
-
-Hope you liked this article. Your comments and suggestions are always welcome!
+* Added new security and stability enhancements
+* User-agent string has been updated to version number `37.0.0.0`
+* Now WebView can be granted access to resources like camera and microphone through `PermissionRequest` class
+* Through `onShowFileChooser()` method Webview can be granted access to images and files
+* Support for open standards like `WebAudio, WebGL, and WebRTC` have been introduced.
+* If the target API is set to API level 21 then the system allows use of mixed content and third-party cookies. It allows carefully choosen HTML page portions to be displayed helping to reduce memory consumption and increase performance.
