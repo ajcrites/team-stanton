@@ -3,7 +3,7 @@ title: Team-Stanton Blog
 email: dstanton@mobiquityinc.com
 description: > # this means to ignore newlines until "baseurl:"
   Team Stanton Blog!
-baseurl: "/teamstanton" # the subpath of your site, e.g. /blog/
+baseurl: "/team-stanton" # the subpath of your site, e.g. /blog/
 url: "http://mobiquity.github.io" # the base hostname & protocol for your site
 
 highlighter: pygments
