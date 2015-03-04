@@ -18,7 +18,7 @@ Although Slack should not be considered archival, it is imperative that chat his
 
 ### Notification queuing is nebulous
 
-We have so many channels for different reasons that is has become very difficult to be in many channels and also be able to properly queue your attention toward notifications.
+We have so many channels for different reasons that it has become very difficult to be in many channels and also be able to properly queue your attention toward notifications.
 
 ### Project communication is fragmented
 
@@ -38,9 +38,11 @@ Here's the plan that has been in limited testing mode for the last 2 weeks:
 
 We move the location, hr, finance and direct-message communication to this team. Everyone in Mobiquity will be in this team regardless of job function. This is the place for 1:1 banter, lunch, trivia, etc.
 
+This partitioning will let us keep a longer message history because our volume of messages is split across multiple teams. We also empower project teams to choose integrations and external members that help set the project on a path to success.
+
 ### MobDev remains the place for platform channels 
 
-Platforms (e.g. #plat-js), job roles (e.g. #role-qa) and other channels directly related to the dev and qa organization say in MobDev. Resource-manager channels will become private groups. For now, all project groups will remain here but will be deprecated
+Platforms (e.g. #plat-js), job roles (e.g. #role-qa) and other channels directly related to the dev and qa organization stay in MobDev. Resource-manager channels will become private groups. For now, all project groups will remain here but will be deprecated
 
 ### New projects will trigger creation of a new project-specific Slack team (e.g. mob-p-jwa.slack.com). 
 
