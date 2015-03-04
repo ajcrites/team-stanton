@@ -2,7 +2,7 @@
 layout: post
 title:  "Slack teams"
 date:   2015-02-14 13:41:00
-category: android
+category: process
 author: gotoplanb
 ---
 
@@ -24,6 +24,10 @@ We have so many channels for different reasons that is has become very difficult
 
 Dev and QA are in Slack but we need to also include the full project crew -- design, architecture, PM, etc. This introduces more challenges in terms of sandboxing information. Many projects have third-party vendors, contractors and client representatives that need to be in the team chat as well.
 
+### Limited integrations
+
+Slack allows 10 types of integrations per team. While we have some common integration types needed for all project (e.g. GitHub), we quickly max out on optional integrations like Google Docs, Dropbox, Asana, custom webhooks, etc.
+
 Some of these challenges could be solved by paying for Slack for everyone in Mobiquity but not all. 
 
 ## The Plan
@@ -41,6 +45,19 @@ Platforms (e.g. #plat-js), job roles (e.g. #role-qa) and other channels directly
 ### New projects will trigger creation of a new project-specific Slack team (e.g. mob-p-jwa.slack.com). 
 
 Project-specific Slack teams mean you can have 10 integrations customized per project (yay!) and better accommodate full team inclusion. If a project warrants paid usage, we now have better segmentation, so that we can bill to the project directly.
+
+The project-specifc teams will have standardized names for private groups to handle the full spectrum of project roles. There will be a #general used for communicating with non-mobiquity members (client, vendors, etc.) as appropriate and managed by the tech lead.
+
+### Example table for new channel partitioning
+
+| MobAll      | MobDev       | MobP JWA     |
+|-------------|--------------|--------------|
+|#general     | #android     | #general     |
+|#finance     | #ios         | architecture |
+|#hr          | #javascript  | design       |
+|#loc-gnv     | #random      | dev          |
+|#loc-gnv-618 | #onramp-ducks| qa           |
+|             | team-stanton | support      |
 
 ## Timeline and transition actions
 
