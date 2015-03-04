@@ -51,7 +51,7 @@ The project-specifc teams will have standardized names for private groups to han
 ### Example table for new channel partitioning
 
 | MobAll      | MobDev       | MobP JWA     |
-|-------------|--------------|--------------|
+|-------------|-------------|---------------|
 |#general     | #android     | #general     |
 |#finance     | #ios         | architecture |
 |#hr          | #javascript  | design       |
