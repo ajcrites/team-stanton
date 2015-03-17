@@ -73,7 +73,7 @@ Please make a comment on this (GitHub issue)[https://github.com/Mobiquity/team-s
 
 ### How do I make a call?
 
-Skype and Hangouts provide the opportunity to make calls to groups. While Slack does not have a native dialing function. Fear not! Slack integrations let's us just type `/hangout`, click the link, and instantly you are transported into a world of amazement and wonder! Well, at least you can make an on-the-fly Google Hangouts link that everyone in your channel/group can see. Sweet! Have other ideas for calling features (while we wait for Slack to complete the announced built-in functionality? Post a comment on this (GitHub issue)[https://github.com/Mobiquity/team-stanton/issues/12].
+Skype and Hangouts provide the opportunity to make calls to groups. While Slack does not have a native dialing function. Fear not! Slack integrations let's us just type `/hangout`, click the link, and instantly you are transported into a world of amazement and wonder! Well, at least you can make an on-the-fly Google Hangouts link that everyone in your channel/group can see. Sweet! Have other ideas for calling features while we wait for Slack to complete the announced built-in functionality? Post a comment on this (GitHub issue)[https://github.com/Mobiquity/team-stanton/issues/12].
 
 ### Where should I send a direct message?
 
