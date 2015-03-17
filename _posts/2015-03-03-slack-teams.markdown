@@ -6,7 +6,7 @@ category: process
 author: gotoplanb
 ---
 
-tl;dr You need to self-signup for a second Slack team (https://moball.slack.com)[https://moball.slack.com} and ensure you've updated your Slack app to allow multiple teams. Location and HR channels migrate to MobAll. We keep MobDev for platform channels and existing project groups. You will be invited to new project groups by your tech lead.
+tl;dr You need to self-signup for a second Slack team [https://moball.slack.com](https://moball.slack.com) and ensure you've updated your Slack app to allow multiple teams. Location and HR channels migrate to MobAll. We keep MobDev for platform channels and existing project groups. You will be invited to new project groups by your tech lead.
 
 ## The challenges
 
@@ -69,11 +69,11 @@ The Projects part of the overall plan is going to be rolled out slowly and with 
 
 ## Have use-case questions?
 
-Please make a comment on this (GitHub issue)[https://github.com/Mobiquity/team-stanton/issues/12] with any use-case questions you have. There will be bumps in the road no doubt.
+Please make a comment on this [GitHub issue](https://github.com/Mobiquity/team-stanton/issues/12) with any use-case questions you have. There will be bumps in the road no doubt.
 
 ### How do I make a call?
 
-Skype and Hangouts provide the opportunity to make calls to groups. While Slack does not have a native dialing function. Fear not! Slack integrations let's us just type `/hangout`, click the link, and instantly you are transported into a world of amazement and wonder! Well, at least you can make an on-the-fly Google Hangouts link that everyone in your channel/group can see. Sweet! Have other ideas for calling features while we wait for Slack to complete the announced built-in functionality? Post a comment on this (GitHub issue)[https://github.com/Mobiquity/team-stanton/issues/12].
+Skype and Hangouts provide the opportunity to make calls to groups. While Slack does not have a native dialing function. Fear not! Slack integrations let's us just type `/hangout`, click the link, and instantly you are transported into a world of amazement and wonder! Well, at least you can make an on-the-fly Google Hangouts link that everyone in your channel/group can see. Sweet! Have other ideas for calling features while we wait for Slack to complete the announced built-in functionality? Post a comment on this [GitHub issue](https://github.com/Mobiquity/team-stanton/issues/12).
 
 ### Where should I send a direct message?
 
@@ -84,4 +84,4 @@ Skype and Hangouts provide the opportunity to make calls to groups. While Slack 
 
 ## How do I get started?
 
-You need to self-signup for a second Slack team (https://moball.slack.com)[https://moball.slack.com} and ensure you've updated your Slack app to allow multiple teams. You will be invited to new project groups by your tech lead.
+You need to self-signup for a second Slack team [https://moball.slack.com](https://moball.slack.com) and ensure you've updated your Slack app to allow multiple teams. You will be invited to new project groups by your tech lead.
