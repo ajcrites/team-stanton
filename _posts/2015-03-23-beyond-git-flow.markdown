@@ -28,7 +28,7 @@ If a story is big, and multiple developers are contributing pieces, we should ke
 
 #### Merging the branch
 
-When the ticket is complete, the developer should run `git rebase develop` before pushing the completed code to the feature branch. Rebasing helps us minimize merge conflicts.
+When the ticket is complete, the developer should pull `develop` to get any new commits, then `git rebase develop` from the **feature** branch before pushing the completed code to the feature branch. Rebasing helps us minimize merge conflicts.
 
 Go to GitHub and open a pull request from your branch into `develop`. You should add an animated GIF to the pull request comments that shows the feature working as expected. We use [LICEcap](http://www.cockos.com/licecap/) to create animated GIFs from a simulator. You also should attach this animated GIF to the appropriate JIRA ticket. In the future, we'll automate the JIRA attachment, but for now this is double duty.
 
