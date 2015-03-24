@@ -26,6 +26,8 @@ Every new feature should be developed in a **feature** branch. We  name the bran
 
 If a story is big, and multiple developers are contributing pieces, we should keep a single feature branch for that user story, and all developers should be pulling frequently. If a user story is so big that more than two developers are working, and pulling before push is inadequate to keep from stepping on each other, the team probably should split the large user story into multiple smaller user stories.
 
+If the developer needs to start the next story before a dependency has been merged from another pull request, it is fine to create a new feature branch using the dependent feature as the base.
+
 #### Merging the branch
 
 When the ticket is complete, the developer should pull `develop` to get any new commits, then `git rebase develop` from the **feature** branch before pushing the completed code to the feature branch. Rebasing helps us minimize merge conflicts.
@@ -93,6 +95,8 @@ For projects that have minimal integration testing for whatever reason, we typic
 ## Release branches
 
 Upon sprint completion, the tech lead will create a **release** branch from `develop`. We like to follow [semantic versioning](http://semver.org/) and limit our release branches to specifying the minor version (e.g. `release/1.0`).
+
+We should create release branches after every sprint to follow the agile philosophy that the result of sprint work is a stable, shippable application. We may not always ship every release, but our process should be geared to allow frequently releases. Jenkins needs to build from a branch, so we cannot rely on tags for building releases.
 
 ### UAT builds
 
