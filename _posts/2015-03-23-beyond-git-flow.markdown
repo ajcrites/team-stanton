@@ -16,7 +16,7 @@ Open the [original git-flow article](http://nvie.com/posts/a-successful-git-bran
 
 ## Feature branches
 
-All new work is done in a **feature** branch created from `develop`. There are multiple types of *features* branches, and naming convention changes slightly.
+All new work is done in a **feature** branch created from `develop`. There are multiple types of **features** branches, and naming convention changes slightly.
 
 ### A new feature
 
