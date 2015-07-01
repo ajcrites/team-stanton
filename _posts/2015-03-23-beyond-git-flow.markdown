@@ -18,6 +18,27 @@ Open the [original git-flow article](http://nvie.com/posts/a-successful-git-bran
 
 All new work is done in a **feature** branch created from `develop`. There are multiple types of **features** branches, and naming convention changes slightly.
 
+### tl;dr for feature development
+Feature develop will generally follow one consistent process. Once you have
+cloned the repo and checked out `develop`, you can start feature development.
+
+<ol start=0>
+<li>`git checkout develop; git pull` -- This step is optional. Pulling all
+remote branches and even `develop` may take a long time. *However*, doing this
+reduces the possibility of merge conflicts later.</li></ol>
+1. `git checkout -b feature/<yourname>/<jira-ticket-number>`. Feature branch
+ names can vary per project. Check with your team.
+2. code code code commit commit commit
+3. `git checkout develop; git pull; git rebase develop <your-feature-branch`
+ * Less explicit and doesn't update your local develop branch: `git pull --rebase origin develop`
+ * Fix any merge conflicts, add, and `git rebase --continue`
+4. `git push origin <your-feature-branch>`
+5. Open pull request
+
+If your pull request contains merge commits, something is wrong. Close it and do not merge it. There are varying ways to fix this. Consult with a senior developer if you're unsure what to do.
+
+If your pull request cannot be automatically merged, you need to rebase again. `git checkout develop; git pull; git rebase develop <your-feature-branch>` will work, and you will have to fix conflicts. Push this to a separate branch (for example, `<your-feature-branch>-a`) and create another pull request. Close the unmergeable pull request.
+
 ### A new feature
 
 #### Creating the branch
@@ -48,6 +69,8 @@ Every pull request should include:
 There are exceptions. Not all work involves the UI layer, so there may be nothing to directly showcase. However, you could include a GIF showing the request/response cycle or some other evidence that the feature is working. Likewise, there are some areas of the app that may not have test coverage. 
 
 Strive to always include GIFs and unit tests. If either of these do not exist, the developer should have commented on the PR, so that the reviewer knows why these items are missing. If you have to close a pull request without merging, you must leave a comment of why you did not merge. Otherwise, it is nebulous if the PR was closed intentionally or accidentally. The comment should include an at-mention to the developer that opened the branch.
+
+**Do not** merge pull requests that contain merge commits. Merging merge commits creates non-linear history. If a PR has merge commits, close it and have the creator make a new pull request. Fixing this requires an interactive rebase, cherry-picking, etc. and has to be done locally. This should not ever happen if standard practices are followed properly.
 
 #### Delete branch after merge
 
